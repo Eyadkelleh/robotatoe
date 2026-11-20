@@ -55,7 +55,7 @@ function SubBots({ person }: { person: OrgPerson }) {
 }
 
 export function Organigramm() {
-  const { mission, orgStatus, org, spielregeln } = daten;
+  const { mission, orgStatus, org, spielregeln, kommunikation } = daten;
   const lead = org.filter((person) => person.ebene === 0);
   const reports = org.filter((person) => person.ebene !== 0);
 
@@ -86,7 +86,15 @@ export function Organigramm() {
           <div className="org">
             <div className="org-root">
               {lead.map((person) => (
-                <PersonCard key={person.name} person={person} ceo />
+                <div key={person.name} className="ceo-block">
+                  <PersonCard person={person} ceo />
+                  {person.subbots.length > 0 ? (
+                    <div className="ceo-lower">
+                      <SubBots person={person} />
+                      <span className="ceo-trunk" aria-hidden="true" />
+                    </div>
+                  ) : null}
+                </div>
               ))}
             </div>
             <div className="org-tier">
@@ -111,6 +119,19 @@ export function Organigramm() {
             ))}
           </ol>
           <Quelle>{spielregeln.quelle}</Quelle>
+
+          <div className="subhead block-head">
+            <h3>Kommunikationsregeln</h3>
+            <Badge status={kommunikation.status} text={kommunikation.statusText} />
+            <span className="quelle">von {kommunikation.von}</span>
+          </div>
+          <ol className="rules">
+            {kommunikation.regeln.map((rule) => (
+              <li key={rule}>{rule}</li>
+            ))}
+          </ol>
+          <p className="quelle">{kommunikation.hinweis}</p>
+          <Quelle>{kommunikation.quelle}</Quelle>
         </>
       )}
     </section>

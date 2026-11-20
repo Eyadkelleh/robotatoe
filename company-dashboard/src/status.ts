@@ -73,6 +73,7 @@ export function countBadges(source: Daten): Record<BadgeStatus, number> {
   add(source.architektur.status);
   for (const point of source.agenda.punkte) add(point.status);
   for (const name of source.namen) add(name.status);
+  add(source.kommunikation.status);
   add(source.mission.status);
   add(source.orgStatus.status);
   for (const person of source.org) {

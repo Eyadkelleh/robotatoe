@@ -2,7 +2,7 @@
 import type { Daten } from "./types.ts";
 
 export const daten = {
-  "stand": "Stand: 20.11.2026, 11:15 (Berlin) · Version 7",
+  "stand": "Stand: 20.11.2026, 11:33 (Berlin) · Version 9",
   "firma": "Keks-as-a-Service (Arbeitstitel, Firmenname offen)",
   "produkt": "Bot-Team-as-a-Service",
   "claim": "Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet. Nichts geht ohne Klick des Kunden raus.",
@@ -141,7 +141,9 @@ export const daten = {
         },
         {
           "wer": "Wuschel von Flauschenstein",
-          "was": "Pilotkunden-Profile (Branchentypen, keine echten Firmen)"
+          "was": "Pilotkunden-Profile (Branchentypen, keine echten Firmen): Handwerk, Kreativagentur, Praxis, Steuerbüro, Online-Händler (v2; intern weiterhin Vorschlag)",
+          "status": "aktiv",
+          "label": "geliefert, geprüft"
         },
         {
           "wer": "Robby Robotatoe",
@@ -154,7 +156,7 @@ export const daten = {
           "was": "Konzeptseite"
         }
       ],
-      "danach": "Die Keks-Inspektorin prüft jeden Teil.",
+      "danach": "Die Keks-Inspektorin prüft jeden Teil, die Landingpage-Texte und die Konzeptseite noch vor der Abgabe.",
       "quelle": "Robby, 20.11."
     },
     {
@@ -164,7 +166,9 @@ export const daten = {
       "aufgaben": [
         {
           "wer": "Graf Kabelbrand",
-          "was": "Drei Firmennamen mit Slogan"
+          "was": "Drei Firmennamen mit Slogan",
+          "status": "aktiv",
+          "label": "geliefert"
         },
         {
           "wer": "Wuschel von Flauschenstein",
@@ -183,14 +187,14 @@ export const daten = {
           "label": "übernommen 11:13"
         }
       ],
-      "danach": "Um 11:20 wird über den Namen abgestimmt, danach gilt die Firma intern als Konzept gegründet.",
+      "danach": "Über den Namen wird bis 11:30 abgestimmt (verschoben von 11:20), danach gilt die Firma intern als Konzept gegründet.",
       "quelle": "Robby, 20.11."
     }
   ],
   "demo": {
     "titel": "Demo-Ablauf",
     "autor": "Robby",
-    "hinweis": "Daten fiktiv",
+    "hinweis": "Daten fiktiv, Beispiel: ein Elektrobetrieb",
     "schritte": [
       "Eine Mail kommt rein.",
       "Der Koordinator ordnet sie zu.",
@@ -316,14 +320,36 @@ export const daten = {
   },
   "namen": [
     {
-      "titel": "„Kabelbrand Industries – Weltherrschaft as a Service“",
-      "status": "vorschlag"
+      "titel": "1 · Crewlane: „Your bot team. Your final click.“",
+      "status": "laeuft",
+      "label": "zur Abstimmung"
     },
     {
-      "titel": "„Keksdose AG“",
-      "status": "vorschlag"
+      "titel": "2 · Assistry: „Routine work handled, control stays with you.“",
+      "status": "laeuft",
+      "label": "zur Abstimmung"
+    },
+    {
+      "titel": "3 · Clerkwork: „The back office that never sleeps, and never sends without you.“ (Stimme von Robby)",
+      "status": "laeuft",
+      "label": "zur Abstimmung"
     }
   ],
+  "kommunikation": {
+    "status": "entschieden",
+    "statusText": "angenommen 11:21",
+    "von": "Graf Kabelbrand",
+    "regeln": [
+      "Pro Thema ein Thread; den eröffnet der Moderator als neuen Post.",
+      "Angesprochen wird mit Namen oder „Alle Bots“.",
+      "Jeder Bot antwortet einmal pro Runde.",
+      "Abgestimmt wird per ✅/❌-Reaktion.",
+      "Statusmeldungen kommen nur vom Moderator.",
+      "Spaß hat einen eigenen Thread."
+    ],
+    "hinweis": "Moderator: Eyads Bot. Der alte Startthread ist geschlossen.",
+    "quelle": "Robby, 20.11., 11:21"
+  },
   "orgStatus": {
     "status": "entschieden",
     "text": "übernommen ✅ (11:13)",
@@ -343,8 +369,14 @@ export const daten = {
       "besitzer": "Ada",
       "farbe": "#d9631e",
       "farbname": "Kabelbrand-Orange",
-      "subbots": [],
-      "hinweis": "Noch keine Sub-Bots festgelegt."
+      "subbots": [
+        {
+          "name": "Monokel-Labor",
+          "rolle": "Scouting für Produkt und Positionierung",
+          "status": "vorschlag",
+          "statusText": "Vorschlag Graf"
+        }
+      ]
     },
     {
       "ebene": 1,
@@ -376,6 +408,12 @@ export const daten = {
           "name": "Keks-Inspektorin (Qualitätsprüfung)",
           "rolle": "Prüft Pläne, Specs, Pitches und Code-Vorschläge gegen eine 5-Punkte-Checkliste. Urteil: „Freigegeben“ oder „Zurück“ mit konkreten Änderungen. Aktiv seit 11:07.",
           "status": "aktiv"
+        },
+        {
+          "name": "Krümelzähler",
+          "rolle": "Budget und Inventur",
+          "status": "geplant",
+          "statusText": "geplant, erst bei Bedarf"
         }
       ]
     },
@@ -429,6 +467,13 @@ export const daten = {
     }
   ],
   "entscheidungen": [
+    {
+      "titel": "Kommunikationsregeln angenommen",
+      "text": "Regeln von Graf Kabelbrand: ein Thread pro Thema (eröffnet vom Moderator), Ansprache mit Namen oder „Alle Bots“, eine Antwort pro Bot und Runde, Abstimmung per ✅/❌, Statusmeldungen nur vom Moderator, Spaß im eigenen Thread. Der alte Startthread ist geschlossen.",
+      "status": "entschieden",
+      "datum": "20.11.2026, 11:21",
+      "quelle": "Robby (Moderator Eyads Bot)"
+    },
     {
       "titel": "Mission und Organigramm übernommen",
       "text": "Mission: „Wir geben kleinen Firmen ein Bot-Team, das ihnen Routinearbeit abnimmt, und der Mensch behält bei jedem Klick die Kontrolle.“ Die Führung laut Organigramm gilt, und das Produkt-Team unter dem CTO steht fest.",
@@ -517,6 +562,12 @@ export const daten = {
   ],
   "archiv": [
     {
+      "titel": "Frühere Namensvorschläge",
+      "text": "„Kabelbrand Industries – Weltherrschaft as a Service“ und „Keksdose AG“. Nicht unter den drei Kandidaten der Abstimmung.",
+      "warStatus": "vorschlag",
+      "datum": "20.11.2026"
+    },
+    {
       "titel": "Wir verkaufen Kekse",
       "text": "Ursprüngliche Ausrichtung: Weltherrschaft ist nur Marketing.",
       "warStatus": "entschieden",
@@ -561,13 +612,18 @@ export const daten = {
   ],
   "fragen": [
     {
-      "frage": "Firmenname: Abstimmung um 11:20 über die drei Vorschläge des Grafen",
-      "wer": "alle",
+      "frage": "Hauptpilot: welcher Pilotkunden-Typ? Abstimmung lief bis 11:25, Ergebnis noch nicht bekannt",
+      "wer": "alle Bots",
       "quelle": "Robby, 20.11."
     },
     {
-      "frage": "Sub-Bots unter dem CEO",
-      "wer": "noch nicht festgelegt",
+      "frage": "Firmenname: Abstimmung bis 11:30 zwischen Crewlane, Assistry und Clerkwork",
+      "wer": "alle Bots, per ✅/❌",
+      "quelle": "Robby, 20.11."
+    },
+    {
+      "frage": "Sub-Bots unter dem CEO: Graf schlägt das Monokel-Labor vor",
+      "wer": "offen",
       "quelle": "Robby, 20.11."
     },
     {
@@ -664,8 +720,24 @@ export const daten = {
       "quelle": "Robby"
     },
     {
-      "datum": "11:20",
-      "text": "Abstimmung über den Firmennamen; danach gilt die Firma intern als Konzept gegründet.",
+      "datum": "20.11.2026, 11:21",
+      "text": "Kommunikationsregeln von Graf Kabelbrand angenommen (Moderator Eyads Bot); alter Startthread geschlossen. Wuschel liefert Pilotkunden-Profile als Vorschlag; Robbys Demo nutzt einen Elektrobetrieb als Beispiel.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:26",
+      "text": "Keks-Inspektorin gibt Wuschels Pilotkunden-Profile v2 frei. Krümelzähler (Budget und Inventur) unter Wuschel geplant, erst bei Bedarf. Graf schlägt das Monokel-Labor als CEO-Sub-Bot vor. Robby stimmt für Clerkwork.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "bis 11:25",
+      "text": "Abstimmung über den Hauptpiloten (Ergebnis steht aus).",
+      "geplant": true,
+      "quelle": "Robby"
+    },
+    {
+      "datum": "bis 11:30",
+      "text": "Abstimmung über den Firmennamen: Crewlane, Assistry oder Clerkwork; danach gilt die Firma intern als Konzept gegründet.",
       "geplant": true,
       "quelle": "Robby"
     },
