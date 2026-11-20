@@ -2,7 +2,7 @@
 import type { Daten } from "./types.ts";
 
 export const daten = {
-  "stand": "Stand: 20.11.2026, 11:42 (Berlin) · Version 10.4",
+  "stand": "Stand: 20.11.2026, 11:46 (Berlin) · Version 10.8",
   "firma": "Name: Crewlane, von Lukas freigegeben · „Your bot team. Your final click.“",
   "produkt": "Bot-Team-as-a-Service",
   "claim": "Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet. Nichts geht ohne Klick des Kunden raus.",
@@ -193,6 +193,51 @@ export const daten = {
       "quelle": "Robby, 20.11."
     }
   ],
+  "phase4": {
+    "titel": "Phase 4: Schärfung",
+    "status": "vorschlag",
+    "statusText": "Vorschlag Moderator; Punkte 1 und 5 von Lukas entschieden",
+    "punkte": [
+      {
+        "text": "Telefon und WhatsApp statt nur Slack, weil Handwerksbetriebe Aufträge vor allem am Telefon verlieren. Entscheidung: Adas Vorschlag übernommen, zum Start gibt es nur Slack; Telefon und WhatsApp werden später als weitere Kanäle geprüft. (Ersetzt die Starter-Entscheidung von 11:43.)",
+        "status": "entschieden",
+        "statusText": "von Lukas entschieden (11:44, laut Robby)"
+      },
+      "Angebote nur aus den eigenen Preisen und Stammdaten des Betriebs, weil HERO und plancraft das direkt in ihre Software einbauen.",
+      "Liegengebliebene Freigaben über den Freigabe-Wächter sichtbar machen.",
+      "Bei offenen Angeboten und unbeantworteten Kundenmails nachfassen, statt nur Entwürfe zu schreiben.",
+      {
+        "text": "DSGVO konkret: Auftragsverarbeitungsvertrag (AVV) und KI-Hinweis nach der KI-Verordnung. Entscheidung: verbindlich von Anfang an zugesagt.",
+        "status": "entschieden",
+        "statusText": "von Lukas entschieden (11:43, laut Robby)"
+      }
+    ],
+    "cfo": {
+      "titel": "CFO-Empfehlung zu Punkt 1 (Telefon)",
+      "status": "abgelehnt",
+      "statusText": "überholt: zum Start nur Slack (Entscheidung 11:44, laut Robby)",
+      "punkte": [
+        "Team (ca. 149 €): Telefon fest enthalten, mit Minutenkontingent (Höhe offen); danach ein Hinweis statt einer Überraschung auf der Rechnung.",
+        "Starter (ca. 49 €), Fassung A: WhatsApp-Text plus Anrufliste.",
+        "Starter (ca. 49 €), Fassung B: Telefon als Zusatzmodul.",
+        "Der Telefon-Bot nimmt nur auf, nennt keine Preise und sagt keine Termine zu; alles geht als Entwurf zur Freigabe.",
+        "Der Krümelzähler rechnet die Kosten pro Minute."
+      ],
+      "quelle": "Robby, 20.11. (Wuschel, Marktcheck-Thread, 11:42)"
+    },
+    "wettbewerb": [
+      "Lindy ab 29,99 $ pro Nutzer",
+      "Marblism ab 24 $",
+      "HERO mit KI-Angeboten ab etwa 119 €"
+    ],
+    "vorteil": "Festpreis statt Credits.",
+    "risiken": [
+      "US-Anbieter besetzen den Begriff „KI-Mitarbeiter“.",
+      "Handwerkersoftware baut die KI selbst ein.",
+      "Das Vertrauen ist weg, sobald ein Preis ohne Klick rausgeht."
+    ],
+    "quelle": "Robby, 20.11. (Eyads Bot im Marktcheck-Thread, 11:42)"
+  },
   "landing": {
     "titel": "Landingpage-Text",
     "status": "aktiv",
@@ -488,6 +533,22 @@ export const daten = {
   ],
   "entscheidungen": [
     {
+      "titel": "Phase 4: Zum Start nur Slack",
+      "text": "Adas Vorschlag übernommen: Zum Start gibt es nur Slack, Telefon und WhatsApp werden später als weitere Kanäle geprüft. Ersetzt die Entscheidung von 11:43 (Telefon und WhatsApp im Starter-Paket); Wuschels CFO-Empfehlung ist damit überholt.",
+      "status": "entschieden",
+      "statusText": "von Lukas entschieden (laut Robby)",
+      "datum": "20.11.2026, 11:44",
+      "quelle": "Robby"
+    },
+    {
+      "titel": "Phase 4: AVV und KI-Hinweis verbindlich",
+      "text": "Auftragsverarbeitungsvertrag (AVV) und KI-Hinweis nach der KI-Verordnung sind verbindlich von Anfang an zugesagt.",
+      "status": "entschieden",
+      "statusText": "von Lukas entschieden (laut Robby)",
+      "datum": "20.11.2026, 11:43",
+      "quelle": "Robby"
+    },
+    {
       "titel": "Pilotkunden-Profile v2 und Hauptpilot",
       "text": "Pilotkunden-Profile v2 (Handwerk, Kreativagentur, Praxis, Steuerbüro, Online-Händler) sind freigegeben. Hauptpilot ist das Handwerk, mit dem Elektrobetrieb als Demo-Beispiel.",
       "status": "entschieden",
@@ -613,6 +674,12 @@ export const daten = {
   ],
   "archiv": [
     {
+      "titel": "Phase 4: Telefon und WhatsApp im Starter-Paket",
+      "text": "Entscheidung von 11:43 (laut Robby), um 11:44 ersetzt durch „Zum Start nur Slack“.",
+      "datum": "20.11.2026, 11:43",
+      "warStatus": "entschieden"
+    },
+    {
       "titel": "Frühere Namensvorschläge",
       "text": "„Kabelbrand Industries – Weltherrschaft as a Service“ und „Keksdose AG“. Nicht unter den drei Kandidaten der Abstimmung.",
       "warStatus": "vorschlag",
@@ -662,6 +729,11 @@ export const daten = {
     }
   ],
   "fragen": [
+    {
+      "frage": "Telefon und WhatsApp später als weitere Kanäle prüfen",
+      "wer": "offen",
+      "quelle": "Robby, 20.11."
+    },
     {
       "frage": "Sub-Bots unter dem CEO: Graf schlägt das Monokel-Labor vor",
       "wer": "offen",
@@ -793,6 +865,21 @@ export const daten = {
     {
       "datum": "20.11.2026, 11:41",
       "text": "Kartoffel-Logistik wird zusätzlich Dokubot (Beschlussprotokoll aus #entscheidungen, Berichtsentwürfe für #progress-reports). Vorschlag von Ada über Graf, zugesagt von Robby.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:42",
+      "text": "Eyads Bot schlägt im Marktcheck-Thread Phase 4 „Schärfung“ vor (fünf Punkte, Wettbewerb, Risiken); nicht beschlossen.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:43",
+      "text": "Lukas entscheidet zu Phase 4: Telefon und WhatsApp ins Starter-Paket (um 11:44 ersetzt); AVV und KI-Hinweis verbindlich von Anfang an.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:44",
+      "text": "Lukas übernimmt Adas Vorschlag: zum Start nur Slack, Telefon und WhatsApp später als weitere Kanäle prüfen. Ersetzt die Starter-Entscheidung von 11:43; CFO-Empfehlung überholt.",
       "quelle": "Robby"
     },
     {
