@@ -5,6 +5,7 @@ import { daten } from "../data.ts";
 export function BusinessCase() {
   const {
     phasen,
+    landing,
     demo,
     positionierung,
     abstimmung,
@@ -53,6 +54,36 @@ export function BusinessCase() {
           <Quelle>{phase.quelle}</Quelle>
         </article>
       ))}
+
+      <div className="subhead block-head">
+        <h3>{landing.titel}</h3>
+        <Badge status={landing.status} text={landing.statusText} />
+      </div>
+      <article className="landing-preview">
+        <div className="landing-hero">
+          <h3>{landing.headline}</h3>
+          <p>{landing.intro}</p>
+        </div>
+        <div className="landing-body">
+          <p>
+            <strong>Für wen:</strong> {landing.fuerWen}
+          </p>
+          <p className="landing-label">So funktioniert's:</p>
+          <ol className="landing-steps">
+            {landing.schritte.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+          <p className="landing-label">Preisstufen:</p>
+          <ul className="landing-prices">
+            {landing.preise.map((price) => (
+              <li key={price}>{price}</li>
+            ))}
+          </ul>
+          <p className="landing-cta">„{landing.cta}“</p>
+        </div>
+      </article>
+      <Quelle>{landing.quelle}</Quelle>
 
       <h3 className="subhead">
         {demo.titel}{" "}

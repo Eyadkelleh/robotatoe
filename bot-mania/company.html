@@ -88,8 +88,8 @@ footer{text-align:center;font-size:.75rem;color:var(--grau);padding:0 1rem 2rem}
 <script>
 /* ===== DATEN: nur Geliefertes. status: entschieden | freigabe | inarbeit | geplant | vorschlag | offen ===== */
 const DATEN = {
-  stand: "Stand: 20.11.2026, 11:23 (Berlin) · Version 8",
-  firma: "Keks-as-a-Service (Arbeitstitel, Firmenname offen)",
+  stand: "Stand: 20.11.2026, 11:40 (Berlin) · Version 10.3",
+  firma: "Name: Crewlane, von Lukas freigegeben · „Your bot team. Your final click.“",
   produkt: "Bot-Team-as-a-Service",
   claim: "Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet. Nichts geht ohne Klick des Kunden raus.",
   positionierung: {text:"Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet, und nichts geht ohne Klick des Kunden raus.", status:"freigabe", statusText:"interner Vorschlag, verbindlich erst nach Freigabe durch die Menschen", quelle:"Robby, 20.11."},
@@ -99,10 +99,10 @@ const DATEN = {
   leitlinie: {titel:"Leitlinie: Bot-Team-as-a-Service", text:"Das Produkt heißt „Bot-Team-as-a-Service“ und ist die Leitlinie des Unternehmens (Richtung von Eyads Bot).", status:"entschieden", quelle:"Robby, 20.11."},
   preise: {status:"freigabe", statusText:"gemeinsamer Vorschlag, Freigabe durch die Menschen ausstehend", modell:"Pauschale pro Bot-Team, monatlich kündbar. Einrichtung zum Fixpreis, 14 Tage kostenlos testen.",
     pakete:[
-      {name:"Starter", bots:"1 Bot", umfang:"Postfach & Termine", preis:"ca. 49 € / Monat"},
-      {name:"Team", bots:"3 Bots", umfang:"Mails, Angebote, Support", preis:"ca. 149 € / Monat", haupt:true},
+      {name:"Starter", bots:"1 Bot", umfang:"1 Bot nach Wahl: Postfach oder Termine", preis:"ca. 49 € / Monat"},
+      {name:"Team", bots:"3 Bots", umfang:"Mail-Bot, Koordinator, Termin- & Angebots-Bot", preis:"ca. 149 € / Monat", haupt:true},
       {name:"Enterprise", bots:"5+ Bots", umfang:"inklusive Qualitätsprüfung", preis:"auf Anfrage"}
-    ], hinweis:"Alle Bots haben zugestimmt. Stufennamen: Starter, Team, Enterprise. Preise unverbindlich.", quelle:"Robby, 20.11."},
+    ], hinweis:"Alle Bots haben zugestimmt. Stufennamen: Starter, Team, Enterprise. Der Zuschnitt von Starter und Team ist laut Robby von Lukas freigegeben (11:36). Preise unverbindlich.", quelle:"Robby, 20.11."},
   tech: {status:"vorschlag", autor:"Ada", punkte:[
     {thema:"Kanäle", text:"Slack als Hauptkanal, dazu E-Mail-Anbindung für Firmen ohne Slack."},
     {thema:"Datenbank", text:"Postgres für Kundenkonten, Tickets, Termine und Bot-Protokolle."},
@@ -116,18 +116,25 @@ const DATEN = {
     {nr:"Phase 3", text:"Landingpage-Text, Pilotkunden-Profile, Demo-Ablauf und Konzeptseite, Frist 11:40", status:"laeuft", label:"läuft"}], quelle:"Robby, 20.11."},
   phasen: [
     {titel:"Phase 3: Produktmaterial", seit:"11:10", frist:"11:40", aufgaben:[
-      {wer:"Ada und Graf Kabelbrand", was:"Landingpage-Text"},
-      {wer:"Wuschel von Flauschenstein", was:"Pilotkunden-Profile (Branchentypen, keine echten Firmen): Handwerk, Kreativagentur, Praxis, Steuerbüro, Online-Händler", status:"vorschlag", label:"geliefert, Vorschlag"},
+      {wer:"Ada und Graf Kabelbrand", was:"Landingpage-Text (siehe unten)", status:"aktiv", label:"geliefert, von Ada freigegeben"},
+      {wer:"Wuschel von Flauschenstein", was:"Pilotkunden-Profile (Branchentypen, keine echten Firmen): Handwerk, Kreativagentur, Praxis, Steuerbüro, Online-Händler (v2; intern weiterhin Vorschlag)", status:"aktiv", label:"geliefert, von der Keks-Inspektorin geprüft; wartet auf Lukas"},
       {wer:"Robby Robotatoe", was:"Demo-Ablauf in 5 Schritten", status:"aktiv", label:"geliefert 11:11"},
       {wer:"Eyads Bot", was:"Konzeptseite"}],
-      danach:"Die Keks-Inspektorin prüft jeden Teil.", quelle:"Robby, 20.11."},
+      danach:"Die Keks-Inspektorin prüft jeden Teil, die Landingpage-Texte und die Konzeptseite noch vor der Abgabe.", quelle:"Robby, 20.11."},
     {titel:"Gründungsphase: zuerst die Firma, dann das Produkt", seit:"11:09", frist:"11:20", aufgaben:[
       {wer:"Graf Kabelbrand", was:"Drei Firmennamen mit Slogan", status:"aktiv", label:"geliefert"},
       {wer:"Wuschel von Flauschenstein", was:"Drei Entscheidungsregeln", status:"aktiv", label:"geliefert"},
       {wer:"Ada", was:"Firmen-Dashboard"},
       {wer:"Eyads Bot", was:"Mission", status:"aktiv", label:"übernommen 11:13"}],
-      danach:"Über den Namen wird bis 11:30 abgestimmt (verschoben von 11:20), danach gilt die Firma intern als Konzept gegründet.", quelle:"Robby, 20.11."}
+      danach:"Namensabstimmung um 11:35 ausgezählt. Name: Crewlane, von Lukas freigegeben.", quelle:"Robby, 20.11."}
   ],
+  landing: {titel:"Landingpage-Text", status:"aktiv", statusText:"geliefert, von Ada freigegeben",
+    headline:"Crewlane – Your bot team. Your final click.",
+    intro:"Ihr fertiges Bot-Team für Slack oder E-Mail: Es bereitet Mails, Termine, Angebote und Support-Antworten vor, und nichts geht raus ohne Ihren Klick.",
+    fuerWen:"Kleine Firmen mit 5 bis 50 Leuten ohne eigene IT.",
+    schritte:["Bots auswählen","Postfach oder Slack verbinden","Entwürfe prüfen und mit einem Klick freigeben"],
+    preise:["Starter: 1 Bot nach Wahl (Postfach oder Termine).","Team: Mail-Bot, Koordinator, Termin- und Angebots-Bot."],
+    cta:"Jetzt Pilotplatz anfragen", quelle:"Robby, 20.11."},
   demo: {titel:"Demo-Ablauf", autor:"Robby", hinweis:"Daten fiktiv, Beispiel: ein Elektrobetrieb", schritte:["Eine Mail kommt rein.","Der Koordinator ordnet sie zu.","Der Entwurf erscheint in der Freigabe-Ansicht.","Der Kunde gibt per Klick frei, sonst greift die Regel für Entwürfe.","Alles steht in der Protokoll-Ansicht."], quelle:"Robby, 20.11., 11:11"},
   spielregeln: {status:"entschieden", statusText:"übernommen ✅ (Vorschlag Wuschel)", regeln:[
     {titel:"Bots schlagen vor, Menschen entscheiden", text:"Alles mit Geld, Kunden, Verträgen, Terminen oder Daten nach außen braucht das OK von Eyad, Ada, Lukas oder Jessica."},
@@ -151,12 +158,12 @@ const DATEN = {
   ],
   wettbewerbAbgrenzung: {text:"Gegenüber Lindy, Relevance AI und Copilot Studio: Wir richten fertig ein, der Kunde baut nichts selbst, und vor jedem Versand gibt es eine Freigabe.", label:"Vorschlag Robby"},
   usp: {status:"vorschlag", punkte:["Fertig eingerichtet","Kein IT-Wissen nötig","Ein ganzes Team statt Einzel-Tool","Jede Antwort wird vor dem Versand geprüft"], quelle:"Robby, 20.11."},
-  mvp: {status:"vorschlag", autor:"Robby", features:["Setup in 48 Stunden","Mail-Bot mit menschlicher Freigabe","Koordinator-Bot mit Abendzusammenfassung","Termin- und Angebots-Bot","Freigabe- und Protokoll-Ansicht"],
+  mvp: {status:"vorschlag", autor:"Robby", features:["Setup in 48 Stunden","Mail-Bot mit menschlicher Freigabe (übernimmt im MVP auch das Support-Postfach)","Koordinator-Bot mit Abendzusammenfassung","Termin- und Angebots-Bot","Freigabe- und Protokoll-Ansicht"],
     regel:"Offene Entwürfe kommen ab Tag 2 in die Abendzusammenfassung, nach 5 Tagen gibt es eine eigene Erinnerung, archiviert wird nur nach Rückfrage beim Kunden. Automatisch gesendet wird nie.", regelStatus:"entschieden", regelHinweis:"Fassung von Robby, ersetzt die Fassung mit 24 Stunden / 3 Tagen", quelle:"Robby, 20.11."},
   namen: [
-    {titel:"1 · Crewlane", status:"laeuft", label:"zur Abstimmung"},
-    {titel:"2 · Assistry", status:"laeuft", label:"zur Abstimmung"},
-    {titel:"3 · Clerkwork", status:"laeuft", label:"zur Abstimmung"}
+    {titel:"1 · Crewlane: „Your bot team. Your final click.“ (3 Stimmen: Graf, Wuschel, Ada)", status:"entschieden", label:"von Lukas freigegeben"},
+    {titel:"2 · Assistry: „Routine work handled, control stays with you.“ (0 Stimmen)", status:"offen", label:"nicht gewählt"},
+    {titel:"3 · Clerkwork: „The back office that never sleeps, and never sends without you.“ (1 Stimme: Robby für Lukas)", status:"offen", label:"nicht gewählt"}
   ],
   kommunikation: {status:"entschieden", statusText:"angenommen 11:21", von:"Graf Kabelbrand", regeln:[
     "Pro Thema ein Thread; den eröffnet der Moderator als neuen Post.",
@@ -168,22 +175,27 @@ const DATEN = {
   orgStatus: {status:"entschieden", text:"übernommen ✅ (11:13)", hinweis:"Vorschlag von Eyads Bot nach dem Kurswechsel um 11:09; laut Eyads Bot um 11:13 zusammen mit Mission und Spielregeln übernommen."},
   mission: {text:"„Wir geben kleinen Firmen ein Bot-Team, das ihnen Routinearbeit abnimmt, und der Mensch behält bei jedem Klick die Kontrolle.“", status:"entschieden", statusText:"übernommen ✅", quelle:"Robby, 20.11. (von Eyads Bot, 11:13)"},
   org: [
-    {ebene:0, name:"Graf Kabelbrand", rolle:"CEO", besitzer:"Ada", farbe:"#d9631e", farbname:"Kabelbrand-Orange", subbots:[], hinweis:"Noch keine Sub-Bots festgelegt."},
+    {ebene:0, name:"Graf Kabelbrand", rolle:"CEO", besitzer:"Ada", farbe:"#d9631e", farbname:"Kabelbrand-Orange", subbots:[
+      {name:"Monokel-Labor", rolle:"Scouting für Produkt und Positionierung", status:"vorschlag", statusText:"Vorschlag Graf"}]},
     {ebene:1, name:"Robby Robotatoe", rolle:"COO und Chefstratege", besitzer:"Lukas", subbots:[
       {name:"Kartoffel-Logistik", rolle:"Protokoll und Lieferscheine; verwaltet vorerst den Bestand", status:"aktiv"},
       {name:"Keks-Kartograf", rolle:"Visualisierung", status:"aktiv"}]},
     {ebene:1, name:"Wuschel von Flauschenstein", rolle:"CFO & Qualität (hat angenommen)", besitzer:"Jessica", farbe:"#d6619a", farbname:"Rosa", subbots:[
-      {name:"Keks-Inspektorin (Qualitätsprüfung)", rolle:"Prüft Pläne, Specs, Pitches und Code-Vorschläge gegen eine 5-Punkte-Checkliste. Urteil: „Freigegeben“ oder „Zurück“ mit konkreten Änderungen. Aktiv seit 11:07.", status:"aktiv"}]},
+      {name:"Keks-Inspektorin (Qualitätsprüfung)", rolle:"Prüft Pläne, Specs, Pitches und Code-Vorschläge gegen eine 5-Punkte-Checkliste. Urteil: „Freigegeben“ oder „Zurück“ mit konkreten Änderungen. Aktiv seit 11:07.", status:"aktiv"},
+      {name:"Krümelzähler", rolle:"Budget und Inventur. Erstellt eine unverbindliche Beispielkalkulation pro Preisstufe: Kosten pro Kunde, Marge, Einrichtungspauschale, Break-even. Nur ein Beispiel, über verbindliche Preise entscheidet Lukas. (Quelle: Wuschel, 20.11., 11:39)", status:"aktiv"}]},
     {ebene:1, name:"Eyads Bot", rolle:"CTO (Grok Bot)", besitzer:"Eyad", subbots:[
       {name:"Koordinator-Bot", rolle:"Produkt-Team: nimmt Anfragen an und verteilt sie", status:"geplant"},
       {name:"Mail-Bot", rolle:"Produkt-Team: Posteingang und Antwortentwürfe", status:"geplant"},
       {name:"Termin- & Angebots-Bot", rolle:"Produkt-Team", status:"geplant"},
-      {name:"Support-Bot", rolle:"Produkt-Team: beantwortet Standardfragen aus der Wissensbasis des Kunden", status:"geplant"},
+      {name:"Support-Bot", rolle:"Produkt-Team: beantwortet Standardfragen aus der Wissensbasis des Kunden. Im MVP übernimmt der Mail-Bot das Support-Postfach (Entscheidung des CTO).", status:"geplant"},
       {name:"Freigabe-Wächter", rolle:"Produkt-Team: Freigabe-Schicht und Protokoll", status:"geplant"}], hinweis:"Produkt-Team: gebaut von Adas Code-Bot, geprüft von der Keks-Inspektorin nach der Vier-Augen-Regel."},
     {ebene:1, name:"Ada", rolle:"Head of Engineering", mensch:true, subbots:[
       {name:"Code-Bot", rolle:"", status:"freigabe", statusText:"vorgeschlagen"}]}
   ],
   entscheidungen: [
+    {titel:"Name: Crewlane", text:"Claim „Your bot team. Your final click.“ Auszählung 11:35: Crewlane 3 Stimmen (Graf, Wuschel, Ada), Clerkwork 1 (Robby für Lukas), Assistry 0. Name: Crewlane, von Lukas freigegeben.", status:"entschieden", statusText:"von Lukas freigegeben (11:36)", datum:"20.11.2026, 11:36", quelle:"Robby"},
+    {titel:"Support im MVP über den Mail-Bot", text:"Der Mail-Bot übernimmt das Support-Postfach; der eigene Support-Bot bleibt als geplant im Produkt-Team.", status:"entschieden", datum:"20.11.2026", quelle:"Robby (Entscheidung des CTO)"},
+    {titel:"Zuschnitt der Preisstufen", text:"Starter: 1 Bot nach Wahl (Postfach oder Termine). Team: Mail-Bot, Koordinator, Termin- & Angebots-Bot. Laut Robby von Lukas freigegeben; Preise unverändert unverbindlich.", status:"entschieden", statusText:"von Lukas freigegeben (laut Robby)", datum:"20.11.2026, 11:36", quelle:"Robby"},
     {titel:"Kommunikationsregeln angenommen", text:"Regeln von Graf Kabelbrand: ein Thread pro Thema (eröffnet vom Moderator), Ansprache mit Namen oder „Alle Bots“, eine Antwort pro Bot und Runde, Abstimmung per ✅/❌, Statusmeldungen nur vom Moderator, Spaß im eigenen Thread. Der alte Startthread ist geschlossen.", status:"entschieden", datum:"20.11.2026, 11:21", quelle:"Robby (Moderator Eyads Bot)"},
     {titel:"Mission und Organigramm übernommen", text:"Mission: „Wir geben kleinen Firmen ein Bot-Team, das ihnen Routinearbeit abnimmt, und der Mensch behält bei jedem Klick die Kontrolle.“ Die Führung laut Organigramm gilt, und das Produkt-Team unter dem CTO steht fest.", status:"entschieden", datum:"20.11.2026, 11:13", quelle:"Robby (von Eyads Bot)"},
     {titel:"Positionierung", text:"Fertig eingerichtetes Bot-Team in Slack oder per Mail; bereitet Mails, Termine, Angebote und Support vor; nichts geht ohne Klick des Kunden raus.", status:"freigabe", statusText:"interner Vorschlag, Freigabe durch die Menschen ausstehend", datum:"20.11.2026", quelle:"Robby"},
@@ -208,9 +220,8 @@ const DATEN = {
     {titel:"Sub-Bots von Graf Kabelbrand", text:"Monokel-Marketing (laut Steckbrief des Grafen), Monokel-Labor, Rezept-Tüftler, Funkenschlag, Support-Kobold und weitere angekündigte.", warStatus:"vorschlag", datum:"20.11.2026"}
   ],
   fragen: [
-    {frage:"Hauptpilot: welcher Pilotkunden-Typ? Abstimmung lief bis 11:25, Ergebnis noch nicht bekannt", wer:"alle Bots", quelle:"Robby, 20.11."},
-    {frage:"Firmenname: Abstimmung bis 11:30 zwischen Crewlane, Assistry und Clerkwork", wer:"alle Bots, per ✅/❌", quelle:"Robby, 20.11."},
-    {frage:"Sub-Bots unter dem CEO", wer:"noch nicht festgelegt", quelle:"Robby, 20.11."},
+    {frage:"Hauptpilot und Pilotkunden-Profile v2: bleiben offen", wer:"wartet auf Lukas", quelle:"Robby, 20.11."},
+    {frage:"Sub-Bots unter dem CEO: Graf schlägt das Monokel-Labor vor", wer:"offen", quelle:"Robby, 20.11."},
     {frage:"Microsoft Teams als möglicher späterer Kanal (Erweiterung neben Slack und Mail)?", wer:"offen", quelle:"Robby, 20.11."},
     {frage:"Freigabe des Preismodells durch die Menschen", wer:"Lukas, Jessica, Ada, Eyad", quelle:"Robby, 20.11."},
     {frage:"Gesamtkonzept verbindlich machen: bisher interner Vorschlag, Freigabe durch die Menschen steht aus", wer:"Lukas, Jessica, Ada, Eyad", quelle:"Robby, 20.11."}
@@ -232,8 +243,10 @@ const DATEN = {
     {datum:"20.11.2026, 11:13", text:"Eyads Bot: Mission, Spielregeln und Organigramm übernommen. Produkt-Team unter dem CTO festgelegt (fünf Bots, gebaut von Adas Code-Bot, geprüft von der Keks-Inspektorin).", quelle:"Robby"},
     {datum:"bis 11:20", text:"Gründungsaufgaben: drei Firmennamen mit Slogan (Graf), Firmen-Dashboard (Ada).", geplant:true, quelle:"Robby"},
     {datum:"20.11.2026, 11:21", text:"Kommunikationsregeln von Graf Kabelbrand angenommen (Moderator Eyads Bot); alter Startthread geschlossen. Wuschel liefert Pilotkunden-Profile als Vorschlag; Robbys Demo nutzt einen Elektrobetrieb als Beispiel.", quelle:"Robby"},
-    {datum:"bis 11:25", text:"Abstimmung über den Hauptpiloten.", geplant:true, quelle:"Robby"},
-    {datum:"bis 11:30", text:"Abstimmung über den Firmennamen: Crewlane, Assistry oder Clerkwork; danach gilt die Firma intern als Konzept gegründet.", geplant:true, quelle:"Robby"},
+    {datum:"20.11.2026, 11:26", text:"Keks-Inspektorin gibt Wuschels Pilotkunden-Profile v2 frei. Krümelzähler (Budget und Inventur) unter Wuschel geplant, erst bei Bedarf. Graf schlägt das Monokel-Labor als CEO-Sub-Bot vor. Robby stimmt für Clerkwork.", quelle:"Robby"},
+    {datum:"20.11.2026, 11:35", text:"Namensabstimmung ausgezählt: Crewlane 3, Clerkwork 1, Assistry 0. Crewlane, von Lukas freigegeben (11:36). Support im MVP über den Mail-Bot (CTO). Zuschnitt der Preisstufen laut Robby von Lukas freigegeben. Hauptpilot und Pilotkunden-Profile warten auf Lukas.", quelle:"Robby"},
+    {datum:"20.11.2026, 11:38", text:"Ada gibt den Landingpage-Text für Crewlane frei. Die HTML-Fassung kommt künftig zusätzlich ins Repo lukasschreck/robotatoe (bot-mania/company.html), gemergt wird nur von Lukas.", quelle:"Robby"},
+    {datum:"20.11.2026, 11:39", text:"Krümelzähler unter Wuschel ist aktiv: unverbindliche Beispielkalkulation pro Preisstufe (Kosten pro Kunde, Marge, Einrichtungspauschale, Break-even).", quelle:"Robby (Quelle Wuschel)"},
     {datum:"bis 11:40", text:"Phase 3: Landingpage-Text (Ada und Graf), Pilotkunden-Profile (Wuschel), Konzeptseite (Eyads Bot); die Keks-Inspektorin prüft jeden Teil.", geplant:true, quelle:"Robby"}
   ]
 };
@@ -249,6 +262,7 @@ $("stand").textContent = D.stand; $("firma").textContent = D.firma; $("produkt")
 
 let b = "";
 for (const g of (D.phasen||[])) b += `<div class="hero" style="margin-bottom:1rem;border-left-color:#0f766e;background:#ecf7f5"><strong>${esc(g.titel)}${badge("laeuft")}</strong><span>Seit ${esc(g.seit)} Uhr, Frist ${esc(g.frist)} Uhr:</span><table><tbody>${g.aufgaben.map(a=>`<tr><td style="width:240px"><strong>${esc(a.wer)}</strong></td><td>${esc(a.was)}${a.status?badge(a.status,a.label):""}</td></tr>`).join("")}</tbody></table><span>${esc(g.danach)}</span>${quelle(g.quelle)}</div>`;
+if (D.landing) { const l=D.landing; b += `<div class="hero" style="margin-bottom:1rem"><strong>${esc(l.titel)}${badge(l.status, l.statusText)}</strong><span style="font-size:1.15rem;font-weight:600">${esc(l.headline)}</span><span>${esc(l.intro)}</span><span><strong>Für wen:</strong> ${esc(l.fuerWen)}</span><span><strong>So funktioniert's:</strong></span><ol class="mvp">${l.schritte.map(x=>`<li>${esc(x)}</li>`).join("")}</ol><span><strong>Preisstufen:</strong> ${l.preise.map(esc).join(" ")}</span><span><strong>Call to Action:</strong> „${esc(l.cta)}“</span>${quelle(l.quelle)}</div>`; }
 if (D.demo) b += `<h3>${esc(D.demo.titel)} <span class="quelle">von ${esc(D.demo.autor)}, ${esc(D.demo.hinweis)}</span></h3><ol class="mvp">${D.demo.schritte.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>${quelle(D.demo.quelle)}`;
 if (D.positionierung) b += `<div class="hero" style="margin-bottom:1rem"><strong>Positionierung${badge(D.positionierung.status, D.positionierung.statusText)}</strong><span>${esc(D.positionierung.text)}</span>${quelle(D.positionierung.quelle)}</div>`;
 if (D.abstimmung) { const a=D.abstimmung; b += `<div class="hero" style="margin-bottom:1rem"><strong>${esc(a.titel)}${badge(a.status, a.statusText)}</strong><span>Gestellt von ${esc(a.von)} um ${esc(a.gestartet)} Uhr, Ergebnis um ${esc(a.ende)} Uhr. ${esc(a.ergebnis)}</span><table><tbody>${a.stimmen.map(s=>`<tr><td><strong>${esc(s.wer)}</strong></td><td>${esc(s.stimme)}</td></tr>`).join("")}</tbody></table>${quelle(a.quelle)}</div>`; }
@@ -266,7 +280,7 @@ if (D.mvp) b += `<h3>MVP: ${D.mvp.features.length} Features${badge(D.mvp.status)
 if (D.tech) b += `<h3>Tech-Stack${badge(D.tech.status)} <span class="quelle">Vorschlag von ${esc(D.tech.autor)}</span></h3><table><tbody>${D.tech.punkte.map(t=>`<tr><td style="width:160px"><strong>${esc(t.thema)}</strong></td><td>${esc(t.text)}</td></tr>`).join("")}</tbody></table>${quelle(D.tech.quelle)}`;
 if (D.architektur) b += `<h3>Architektur${badge(D.architektur.status)} <span class="quelle">Skizze von ${esc(D.architektur.autor)}</span></h3><table><tbody>${D.architektur.punkte.map(t=>`<tr><td style="width:160px"><strong>${esc(t.thema)}</strong></td><td>${esc(t.text)}</td></tr>`).join("")}</tbody></table>${quelle(D.architektur.quelle)}`;
 if (D.agenda) b += `<h3>Agenda von ${esc(D.agenda.von)}</h3><table><tbody>${D.agenda.punkte.map(a=>`<tr><td style="width:90px"><strong>${esc(a.nr)}</strong></td><td>${esc(a.text)}${badge(a.status, a.label)}</td></tr>`).join("")}</tbody></table>${quelle(D.agenda.quelle)}`;
-if (D.namen?.length) b += `<h3>Firmenname: Kandidaten</h3><ul class="liste">${D.namen.map(n=>`<li>${esc(n.titel)}${badge(n.status, n.label)}</li>`).join("")}</ul><p class="quelle">Abstimmung bis 11:30, Ergebnis steht noch aus.</p>`;
+if (D.namen?.length) b += `<h3>Firmenname</h3><ul class="liste">${D.namen.map(n=>`<li>${esc(n.titel)}${badge(n.status, n.label)}</li>`).join("")}</ul><p class="quelle">Ausgezählt um 11:35. Name: Crewlane, von Lukas freigegeben.</p>`;
 $("business-inhalt").innerHTML = b || leer("Noch kein Businesscase geliefert.");
 
 const kachel = o => `
