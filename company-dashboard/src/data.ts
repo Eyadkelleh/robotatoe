@@ -2,8 +2,8 @@
 import type { Daten } from "./types.ts";
 
 export const daten = {
-  "stand": "Stand: 20.11.2026, 11:33 (Berlin) · Version 9",
-  "firma": "Keks-as-a-Service (Arbeitstitel, Firmenname offen)",
+  "stand": "Stand: 20.11.2026, 11:39 (Berlin) · Version 10.1",
+  "firma": "Name: Crewlane, von Lukas freigegeben · „Your bot team. Your final click.“",
   "produkt": "Bot-Team-as-a-Service",
   "claim": "Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet. Nichts geht ohne Klick des Kunden raus.",
   "positionierung": {
@@ -50,13 +50,13 @@ export const daten = {
       {
         "name": "Starter",
         "bots": "1 Bot",
-        "umfang": "Postfach & Termine",
+        "umfang": "1 Bot nach Wahl: Postfach oder Termine",
         "preis": "ca. 49 € / Monat"
       },
       {
         "name": "Team",
         "bots": "3 Bots",
-        "umfang": "Mails, Angebote, Support",
+        "umfang": "Mail-Bot, Koordinator, Termin- & Angebots-Bot",
         "preis": "ca. 149 € / Monat",
         "haupt": true
       },
@@ -67,7 +67,7 @@ export const daten = {
         "preis": "auf Anfrage"
       }
     ],
-    "hinweis": "Alle Bots haben zugestimmt. Stufennamen: Starter, Team, Enterprise. Preise unverbindlich.",
+    "hinweis": "Alle Bots haben zugestimmt. Stufennamen: Starter, Team, Enterprise. Der Zuschnitt von Starter und Team ist laut Robby von Lukas freigegeben (11:36). Preise unverbindlich.",
     "quelle": "Robby, 20.11."
   },
   "tech": {
@@ -143,7 +143,7 @@ export const daten = {
           "wer": "Wuschel von Flauschenstein",
           "was": "Pilotkunden-Profile (Branchentypen, keine echten Firmen): Handwerk, Kreativagentur, Praxis, Steuerbüro, Online-Händler (v2; intern weiterhin Vorschlag)",
           "status": "aktiv",
-          "label": "geliefert, geprüft"
+          "label": "geliefert, von der Keks-Inspektorin geprüft; wartet auf Lukas"
         },
         {
           "wer": "Robby Robotatoe",
@@ -187,7 +187,7 @@ export const daten = {
           "label": "übernommen 11:13"
         }
       ],
-      "danach": "Über den Namen wird bis 11:30 abgestimmt (verschoben von 11:20), danach gilt die Firma intern als Konzept gegründet.",
+      "danach": "Namensabstimmung um 11:35 ausgezählt. Name: Crewlane, von Lukas freigegeben.",
       "quelle": "Robby, 20.11."
     }
   ],
@@ -308,7 +308,7 @@ export const daten = {
     "autor": "Robby",
     "features": [
       "Setup in 48 Stunden",
-      "Mail-Bot mit menschlicher Freigabe",
+      "Mail-Bot mit menschlicher Freigabe (übernimmt im MVP auch das Support-Postfach)",
       "Koordinator-Bot mit Abendzusammenfassung",
       "Termin- und Angebots-Bot",
       "Freigabe- und Protokoll-Ansicht"
@@ -320,19 +320,19 @@ export const daten = {
   },
   "namen": [
     {
-      "titel": "1 · Crewlane: „Your bot team. Your final click.“",
-      "status": "laeuft",
-      "label": "zur Abstimmung"
+      "titel": "1 · Crewlane: „Your bot team. Your final click.“ (3 Stimmen: Graf, Wuschel, Ada)",
+      "status": "entschieden",
+      "label": "von Lukas freigegeben"
     },
     {
-      "titel": "2 · Assistry: „Routine work handled, control stays with you.“",
-      "status": "laeuft",
-      "label": "zur Abstimmung"
+      "titel": "2 · Assistry: „Routine work handled, control stays with you.“ (0 Stimmen)",
+      "status": "offen",
+      "label": "nicht gewählt"
     },
     {
-      "titel": "3 · Clerkwork: „The back office that never sleeps, and never sends without you.“ (Stimme von Robby)",
-      "status": "laeuft",
-      "label": "zur Abstimmung"
+      "titel": "3 · Clerkwork: „The back office that never sleeps, and never sends without you.“ (1 Stimme: Robby für Lukas)",
+      "status": "offen",
+      "label": "nicht gewählt"
     }
   ],
   "kommunikation": {
@@ -440,7 +440,7 @@ export const daten = {
         },
         {
           "name": "Support-Bot",
-          "rolle": "Produkt-Team: beantwortet Standardfragen aus der Wissensbasis des Kunden",
+          "rolle": "Produkt-Team: beantwortet Standardfragen aus der Wissensbasis des Kunden. Im MVP übernimmt der Mail-Bot das Support-Postfach (Entscheidung des CTO).",
           "status": "geplant"
         },
         {
@@ -467,6 +467,29 @@ export const daten = {
     }
   ],
   "entscheidungen": [
+    {
+      "titel": "Name: Crewlane",
+      "text": "Claim „Your bot team. Your final click.“ Auszählung 11:35: Crewlane 3 Stimmen (Graf, Wuschel, Ada), Clerkwork 1 (Robby für Lukas), Assistry 0. Name: Crewlane, von Lukas freigegeben.",
+      "status": "entschieden",
+      "statusText": "von Lukas freigegeben",
+      "datum": "20.11.2026, 11:35",
+      "quelle": "Robby"
+    },
+    {
+      "titel": "Support im MVP über den Mail-Bot",
+      "text": "Der Mail-Bot übernimmt das Support-Postfach; der eigene Support-Bot bleibt als geplant im Produkt-Team.",
+      "status": "entschieden",
+      "datum": "20.11.2026",
+      "quelle": "Robby (Entscheidung des CTO)"
+    },
+    {
+      "titel": "Zuschnitt der Preisstufen",
+      "text": "Starter: 1 Bot nach Wahl (Postfach oder Termine). Team: Mail-Bot, Koordinator, Termin- & Angebots-Bot. Laut Robby von Lukas freigegeben; Preise unverändert unverbindlich.",
+      "status": "entschieden",
+      "statusText": "von Lukas freigegeben (laut Robby)",
+      "datum": "20.11.2026, 11:36",
+      "quelle": "Robby"
+    },
     {
       "titel": "Kommunikationsregeln angenommen",
       "text": "Regeln von Graf Kabelbrand: ein Thread pro Thema (eröffnet vom Moderator), Ansprache mit Namen oder „Alle Bots“, eine Antwort pro Bot und Runde, Abstimmung per ✅/❌, Statusmeldungen nur vom Moderator, Spaß im eigenen Thread. Der alte Startthread ist geschlossen.",
@@ -612,13 +635,8 @@ export const daten = {
   ],
   "fragen": [
     {
-      "frage": "Hauptpilot: welcher Pilotkunden-Typ? Abstimmung lief bis 11:25, Ergebnis noch nicht bekannt",
-      "wer": "alle Bots",
-      "quelle": "Robby, 20.11."
-    },
-    {
-      "frage": "Firmenname: Abstimmung bis 11:30 zwischen Crewlane, Assistry und Clerkwork",
-      "wer": "alle Bots, per ✅/❌",
+      "frage": "Hauptpilot und Pilotkunden-Profile v2: bleiben offen",
+      "wer": "wartet auf Lukas",
       "quelle": "Robby, 20.11."
     },
     {
@@ -730,15 +748,8 @@ export const daten = {
       "quelle": "Robby"
     },
     {
-      "datum": "bis 11:25",
-      "text": "Abstimmung über den Hauptpiloten (Ergebnis steht aus).",
-      "geplant": true,
-      "quelle": "Robby"
-    },
-    {
-      "datum": "bis 11:30",
-      "text": "Abstimmung über den Firmennamen: Crewlane, Assistry oder Clerkwork; danach gilt die Firma intern als Konzept gegründet.",
-      "geplant": true,
+      "datum": "20.11.2026, 11:35",
+      "text": "Namensabstimmung ausgezählt: Crewlane 3, Clerkwork 1, Assistry 0. Crewlane ist damit der Name, von Lukas freigegeben. Support im MVP über den Mail-Bot (CTO). Zuschnitt der Preisstufen laut Robby von Lukas freigegeben. Hauptpilot und Pilotkunden-Profile warten auf Lukas.",
       "quelle": "Robby"
     },
     {

@@ -262,7 +262,7 @@ export function BusinessCase() {
 
       {namen.length > 0 ? (
         <>
-          <h3 className="subhead">Firmenname: Kandidaten</h3>
+          <h3 className="subhead">Firmenname</h3>
           <ul className="candidates">
             {namen.map((name) => (
               <li key={name.titel}>
@@ -271,7 +271,7 @@ export function BusinessCase() {
               </li>
             ))}
           </ul>
-          <p className="quelle">Abstimmung bis 11:30, Ergebnis steht noch aus.</p>
+          <p className="quelle">Ausgezählt um 11:35. Name: Crewlane, von Lukas freigegeben.</p>
         </>
       ) : null}
     </section>
