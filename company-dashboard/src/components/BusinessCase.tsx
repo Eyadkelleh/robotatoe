@@ -62,12 +62,25 @@ export function BusinessCase() {
           <Badge status={phase4.status} text={phase4.statusText} />
         </div>
         <ol className="proposal-points">
-          {phase4.punkte.map((point) => (
-            <li key={point}>{point}</li>
-          ))}
+          {phase4.punkte.map((point) => {
+            const text = typeof point === "string" ? point : point.text;
+            const status = typeof point === "string" ? phase4.status : point.status;
+            const label = typeof point === "string" ? "Vorschlag Moderator" : point.statusText;
+            return (
+              <li key={text} className={status === "entschieden" ? "is-decided" : undefined}>
+                {text} <Badge status={status} text={label} />
+              </li>
+            );
+          })}
         </ol>
         {phase4.cfo ? (
-          <aside className="cfo">
+          <aside
+            className={
+              phase4.cfo.status === "abgelehnt" || phase4.cfo.statusText.startsWith("überholt")
+                ? "cfo is-rejected"
+                : "cfo"
+            }
+          >
             <div className="block-head">
               <h4>{phase4.cfo.titel}</h4>
               <Badge status={phase4.cfo.status} text={phase4.cfo.statusText} />

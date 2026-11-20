@@ -6,7 +6,8 @@ export type DataStatus =
   | "geplant"
   | "vorschlag"
   | "laeuft"
-  | "offen";
+  | "offen"
+  | "abgelehnt";
 
 export interface Positionierung {
   text: string;
@@ -105,11 +106,17 @@ export interface CfoEmpfehlung {
   quelle: string;
 }
 
+export interface Phase4Punkt {
+  text: string;
+  status: DataStatus;
+  statusText?: string;
+}
+
 export interface Phase4 {
   titel: string;
   status: DataStatus;
   statusText: string;
-  punkte: string[];
+  punkte: Array<string | Phase4Punkt>;
   cfo?: CfoEmpfehlung;
   wettbewerb: string[];
   vorteil: string;

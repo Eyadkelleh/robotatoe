@@ -40,15 +40,12 @@ export default function App() {
       <a className="skip" href="#inhalt">
         Zum Inhalt
       </a>
-      <div className="topbar">
-        <div className="wrap topbar-inner">
-          <p>{daten.stand}</p>
-        </div>
-      </div>
       <header className="masthead">
         <div className="wrap">
+          <p className="eyebrow">{daten.stand}</p>
+          <h1>Crewlane</h1>
           <p className="company-line">{daten.firma}</p>
-          <h1>{daten.produkt}</h1>
+          <p className="product-name">{daten.produkt}</p>
           <p className="claim">{daten.claim}</p>
         </div>
       </header>

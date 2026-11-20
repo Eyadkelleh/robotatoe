@@ -11,6 +11,7 @@ export const BADGE_ORDER: BadgeStatus[] = [
   "vorschlag",
   "laeuft",
   "offen",
+  "abgelehnt",
   "abgeloest",
 ];
 
@@ -23,6 +24,7 @@ export const STATUS_LABEL: Record<BadgeStatus, string> = {
   vorschlag: "Vorschlag",
   laeuft: "läuft",
   offen: "offen",
+  abgelehnt: "abgelehnt",
   abgeloest: "abgelöst",
 };
 
@@ -41,6 +43,7 @@ function emptyCounts(): Record<BadgeStatus, number> {
     vorschlag: 0,
     laeuft: 0,
     offen: 0,
+    abgelehnt: 0,
     abgeloest: 0,
   };
 }
@@ -58,6 +61,9 @@ export function countBadges(source: Daten): Record<BadgeStatus, number> {
     for (const task of phase.aufgaben) add(task.status);
   }
   add(source.phase4.status);
+  for (const point of source.phase4.punkte) {
+    add(typeof point === "string" ? source.phase4.status : point.status);
+  }
   add(source.phase4.cfo?.status);
   add(source.landing.status);
   add(source.positionierung.status);
