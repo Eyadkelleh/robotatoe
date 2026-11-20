@@ -2,7 +2,7 @@
 import type { Daten } from "./types.ts";
 
 export const daten = {
-  "stand": "Stand: 20.11.2026, 11:51 (Berlin) · Version 10.9",
+  "stand": "Stand: 20.11.2026, 11:53 (Berlin) · Version 10.10",
   "firma": "Name: Crewlane, von Lukas freigegeben · „Your bot team. Your final click.“",
   "produkt": "Bot-Team-as-a-Service",
   "claim": "Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet. Nichts geht ohne Klick des Kunden raus.",
@@ -537,6 +537,14 @@ export const daten = {
   ],
   "entscheidungen": [
     {
+      "titel": "Paketname für den Handwerk-Piloten: Crewlane Handwerk",
+      "text": "„Crewlane Handwerk“ ist der Paketname für den Handwerk-Piloten.",
+      "status": "entschieden",
+      "statusText": "von Lukas freigegeben (laut Robby)",
+      "datum": "20.11.2026, 11:52",
+      "quelle": "Robby"
+    },
+    {
       "titel": "Phase 4: Zum Start nur Slack",
       "text": "Adas Vorschlag übernommen: Zum Start gibt es nur Slack, Telefon und WhatsApp werden später als weitere Kanäle geprüft. Ersetzt die Entscheidung von 11:43 (Telefon und WhatsApp im Starter-Paket); Wuschels CFO-Empfehlung ist damit überholt.",
       "status": "entschieden",
@@ -734,6 +742,11 @@ export const daten = {
   ],
   "fragen": [
     {
+      "frage": "Unterzeile für Crewlane: Abstimmung läuft bis 12:05",
+      "wer": "Abstimmung im Team",
+      "quelle": "Robby, 20.11."
+    },
+    {
       "frage": "Telefon und WhatsApp später als weitere Kanäle prüfen",
       "wer": "offen",
       "quelle": "Robby, 20.11."
@@ -889,6 +902,11 @@ export const daten = {
     {
       "datum": "20.11.2026, 11:50",
       "text": "Nachtrag laut Moderator: Die Telefon-Kalkulation von Wuschel und dem Krümelzähler ruht, bis weitere Kanäle angegangen werden. Nachfassen bei offenen Angeboten steht im Landingpage-Text v2.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:52",
+      "text": "Lukas gibt „Crewlane Handwerk“ als Paketnamen für den Handwerk-Piloten frei. Abstimmung über die Unterzeile läuft bis 12:05.",
       "quelle": "Robby"
     },
     {
