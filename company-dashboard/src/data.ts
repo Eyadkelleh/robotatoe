@@ -2,7 +2,7 @@
 import type { Daten } from "./types.ts";
 
 export const daten = {
-  "stand": "Stand: 20.11.2026, 11:41 (Berlin) · Version 10.4",
+  "stand": "Stand: 20.11.2026, 11:42 (Berlin) · Version 10.4",
   "firma": "Name: Crewlane, von Lukas freigegeben · „Your bot team. Your final click.“",
   "produkt": "Bot-Team-as-a-Service",
   "claim": "Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet. Nichts geht ohne Klick des Kunden raus.",
@@ -407,7 +407,7 @@ export const daten = {
       "subbots": [
         {
           "name": "Kartoffel-Logistik",
-          "rolle": "Protokoll und Lieferscheine; verwaltet vorerst den Bestand",
+          "rolle": "Protokoll und Lieferscheine; verwaltet vorerst den Bestand. Jetzt auch Dokubot: liest die vier Channels mit, protokolliert die Beschlüsse aus #entscheidungen und schreibt Berichtsentwürfe für #progress-reports (Erledigt, In Arbeit, Blocker, jeweils mit Links). Wer die Gesamtberichte postet, legt der Moderator fest. Vorschlag von Ada über Graf, zugesagt von Robby um 11:41.",
           "status": "aktiv"
         },
         {
@@ -788,6 +788,11 @@ export const daten = {
     {
       "datum": "20.11.2026, 11:40",
       "text": "Lukas gibt die Pilotkunden-Profile v2 frei. Hauptpilot: Handwerk, mit dem Elektrobetrieb als Demo-Beispiel.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:41",
+      "text": "Kartoffel-Logistik wird zusätzlich Dokubot (Beschlussprotokoll aus #entscheidungen, Berichtsentwürfe für #progress-reports). Vorschlag von Ada über Graf, zugesagt von Robby.",
       "quelle": "Robby"
     },
     {
