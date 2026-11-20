@@ -42,12 +42,12 @@ export default function App() {
       </a>
       <div className="topbar">
         <div className="wrap topbar-inner">
-          <p>{daten.firma}</p>
           <p>{daten.stand}</p>
         </div>
       </div>
       <header className="masthead">
         <div className="wrap">
+          <p className="company-line">{daten.firma}</p>
           <h1>{daten.produkt}</h1>
           <p className="claim">{daten.claim}</p>
         </div>

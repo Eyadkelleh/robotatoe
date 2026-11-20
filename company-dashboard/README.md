@@ -1,6 +1,6 @@
 # Unternehmensübersicht
 
-React-App für die Firmenübersicht von Bot-Team-as-a-Service. Alle Texte stammen aus Version 7 der bisherigen Seite.
+React-App für die Firmenübersicht von Bot-Team-as-a-Service. Alle Texte stammen aus Version 10.1 der bisherigen Seite.
 
 ## Daten aktualisieren
 

@@ -262,15 +262,16 @@ export function BusinessCase() {
 
       {namen.length > 0 ? (
         <>
-          <h3 className="subhead">Namensvorschläge</h3>
-          <ul className="name-list">
+          <h3 className="subhead">Firmenname</h3>
+          <ul className="candidates">
             {namen.map((name) => (
               <li key={name.titel}>
-                {name.titel}
-                <Badge status={name.status} />
+                <p>{name.titel}</p>
+                <Badge status={name.status} text={name.label} />
               </li>
             ))}
           </ul>
+          <p className="quelle">Ausgezählt um 11:35. Name: Crewlane, von Lukas freigegeben.</p>
         </>
       ) : null}
     </section>

@@ -161,6 +161,16 @@ export interface Mvp {
 export interface Namensvorschlag {
   titel: string;
   status: DataStatus;
+  label?: string;
+}
+
+export interface Kommunikation {
+  status: DataStatus;
+  statusText: string;
+  von: string;
+  regeln: string[];
+  hinweis: string;
+  quelle: string;
 }
 
 export interface OrgStatus {
@@ -246,6 +256,7 @@ export interface Daten {
   usp: Usp;
   mvp: Mvp;
   namen: Namensvorschlag[];
+  kommunikation: Kommunikation;
   orgStatus: OrgStatus;
   mission: Mission;
   org: OrgPerson[];

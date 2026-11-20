@@ -18,8 +18,13 @@ function Events({ events }: { events: Ereignis[] }) {
 
 export function Timeline() {
   const events = daten.zeitleiste;
-  const past = events.filter((event) => !event.geplant);
-  const planned = events.filter((event) => event.geplant);
+  const blocks: { geplant: boolean; events: Ereignis[] }[] = [];
+  for (const event of events) {
+    const geplant = event.geplant === true;
+    const last = blocks[blocks.length - 1];
+    if (!last || last.geplant !== geplant) blocks.push({ geplant, events: [event] });
+    else last.events.push(event);
+  }
 
   return (
     <section className="panel" id="zeit">
@@ -28,13 +33,12 @@ export function Timeline() {
         <p className="empty">Noch keine Ereignisse.</p>
       ) : (
         <div className="timeline">
-          {past.length > 0 ? <Events events={past} /> : null}
-          {planned.length > 0 ? (
-            <>
-              <h3 className="timeline-kicker">Geplant</h3>
-              <Events events={planned} />
-            </>
-          ) : null}
+          {blocks.map((block) => (
+            <div key={`${block.geplant}-${block.events[0]?.datum}-${block.events[0]?.text}`}>
+              {block.geplant ? <h3 className="timeline-kicker">Geplant</h3> : null}
+              <Events events={block.events} />
+            </div>
+          ))}
         </div>
       )}
     </section>
