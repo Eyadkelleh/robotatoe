@@ -97,6 +97,19 @@ export interface Phase {
   quelle: string;
 }
 
+export interface Landing {
+  titel: string;
+  status: DataStatus;
+  statusText: string;
+  headline: string;
+  intro: string;
+  fuerWen: string;
+  schritte: string[];
+  preise: string[];
+  cta: string;
+  quelle: string;
+}
+
 export interface Demo {
   titel: string;
   autor: string;
@@ -247,6 +260,7 @@ export interface Daten {
   tech: Tech;
   agenda: Agenda;
   phasen: Phase[];
+  landing: Landing;
   demo: Demo;
   spielregeln: Spielregeln;
   zielkunde: Zielkunde;

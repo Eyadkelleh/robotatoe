@@ -707,6 +707,111 @@ h3 .quelle,
 
 .phase + .phase { margin-top: 12px; }
 
+.landing-preview {
+  margin-top: 0.9rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+}
+
+.landing-hero {
+  background: var(--navy);
+  color: #f6f1ea;
+  padding: 22px 22px 20px;
+}
+
+.landing-hero h3 {
+  margin: 0;
+  max-width: 22em;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: #f6f1ea;
+}
+
+.landing-hero p:last-child {
+  max-width: 42rem;
+  margin: 0.7rem 0 0;
+  color: #e7e1d8;
+}
+
+.landing-body {
+  padding: 16px 22px 20px;
+}
+
+.landing-label {
+  margin: 0.95rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.landing-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  counter-reset: landing;
+}
+
+.landing-steps li {
+  counter-increment: landing;
+  margin: 0;
+  padding: 12px 12px 12px 2.4rem;
+  position: relative;
+  background: var(--paper-2);
+  border-radius: 10px;
+}
+
+.landing-steps li::before {
+  content: counter(landing);
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #f6f1ea;
+  font-size: 0.72rem;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+
+.landing-prices {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0.55rem 0 0;
+  padding: 0;
+}
+
+.landing-prices li {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.landing-cta {
+  display: inline-block;
+  margin: 1rem 0 0;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #f6f1ea;
+  font-weight: 600;
+}
+
 .meta-line {
   color: var(--muted);
   margin: 0.35rem 0 0.55rem;
@@ -1091,7 +1196,9 @@ details[open] .fold-icon { transform: rotate(180deg); }
 @media (max-width: 980px) {
   .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .candidates,
-  .tariffs { grid-template-columns: 1fr; }
+  .tariffs,
+  .landing-steps,
+  .landing-prices { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {

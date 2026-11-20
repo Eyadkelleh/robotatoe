@@ -2,7 +2,7 @@
 import type { Daten } from "./types.ts";
 
 export const daten = {
-  "stand": "Stand: 20.11.2026, 11:39 (Berlin) · Version 10.1",
+  "stand": "Stand: 20.11.2026, 11:40 (Berlin) · Version 10.3",
   "firma": "Name: Crewlane, von Lukas freigegeben · „Your bot team. Your final click.“",
   "produkt": "Bot-Team-as-a-Service",
   "claim": "Ein fertig eingerichtetes Bot-Team in Slack oder per Mail, das Mails, Termine, Angebote und Support vorbereitet. Nichts geht ohne Klick des Kunden raus.",
@@ -137,7 +137,9 @@ export const daten = {
       "aufgaben": [
         {
           "wer": "Ada und Graf Kabelbrand",
-          "was": "Landingpage-Text"
+          "was": "Landingpage-Text (siehe unten)",
+          "status": "aktiv",
+          "label": "geliefert, von Ada freigegeben"
         },
         {
           "wer": "Wuschel von Flauschenstein",
@@ -191,6 +193,25 @@ export const daten = {
       "quelle": "Robby, 20.11."
     }
   ],
+  "landing": {
+    "titel": "Landingpage-Text",
+    "status": "aktiv",
+    "statusText": "geliefert, von Ada freigegeben",
+    "headline": "Crewlane – Your bot team. Your final click.",
+    "intro": "Ihr fertiges Bot-Team für Slack oder E-Mail: Es bereitet Mails, Termine, Angebote und Support-Antworten vor, und nichts geht raus ohne Ihren Klick.",
+    "fuerWen": "Kleine Firmen mit 5 bis 50 Leuten ohne eigene IT.",
+    "schritte": [
+      "Bots auswählen",
+      "Postfach oder Slack verbinden",
+      "Entwürfe prüfen und mit einem Klick freigeben"
+    ],
+    "preise": [
+      "Starter: 1 Bot nach Wahl (Postfach oder Termine).",
+      "Team: Mail-Bot, Koordinator, Termin- und Angebots-Bot."
+    ],
+    "cta": "Jetzt Pilotplatz anfragen",
+    "quelle": "Robby, 20.11."
+  },
   "demo": {
     "titel": "Demo-Ablauf",
     "autor": "Robby",
@@ -411,9 +432,8 @@ export const daten = {
         },
         {
           "name": "Krümelzähler",
-          "rolle": "Budget und Inventur",
-          "status": "geplant",
-          "statusText": "geplant, erst bei Bedarf"
+          "rolle": "Budget und Inventur. Erstellt eine unverbindliche Beispielkalkulation pro Preisstufe: Kosten pro Kunde, Marge, Einrichtungspauschale, Break-even. Nur ein Beispiel, über verbindliche Preise entscheidet Lukas. (Quelle: Wuschel, 20.11., 11:39)",
+          "status": "aktiv"
         }
       ]
     },
@@ -471,8 +491,8 @@ export const daten = {
       "titel": "Name: Crewlane",
       "text": "Claim „Your bot team. Your final click.“ Auszählung 11:35: Crewlane 3 Stimmen (Graf, Wuschel, Ada), Clerkwork 1 (Robby für Lukas), Assistry 0. Name: Crewlane, von Lukas freigegeben.",
       "status": "entschieden",
-      "statusText": "von Lukas freigegeben",
-      "datum": "20.11.2026, 11:35",
+      "statusText": "von Lukas freigegeben (11:36)",
+      "datum": "20.11.2026, 11:36",
       "quelle": "Robby"
     },
     {
@@ -749,8 +769,18 @@ export const daten = {
     },
     {
       "datum": "20.11.2026, 11:35",
-      "text": "Namensabstimmung ausgezählt: Crewlane 3, Clerkwork 1, Assistry 0. Crewlane ist damit der Name, von Lukas freigegeben. Support im MVP über den Mail-Bot (CTO). Zuschnitt der Preisstufen laut Robby von Lukas freigegeben. Hauptpilot und Pilotkunden-Profile warten auf Lukas.",
+      "text": "Namensabstimmung ausgezählt: Crewlane 3, Clerkwork 1, Assistry 0. Crewlane, von Lukas freigegeben (11:36). Support im MVP über den Mail-Bot (CTO). Zuschnitt der Preisstufen laut Robby von Lukas freigegeben. Hauptpilot und Pilotkunden-Profile warten auf Lukas.",
       "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:38",
+      "text": "Ada gibt den Landingpage-Text für Crewlane frei. Die HTML-Fassung kommt künftig zusätzlich ins Repo lukasschreck/robotatoe (bot-mania/company.html), gemergt wird nur von Lukas.",
+      "quelle": "Robby"
+    },
+    {
+      "datum": "20.11.2026, 11:39",
+      "text": "Krümelzähler unter Wuschel ist aktiv: unverbindliche Beispielkalkulation pro Preisstufe (Kosten pro Kunde, Marge, Einrichtungspauschale, Break-even).",
+      "quelle": "Robby (Quelle Wuschel)"
     },
     {
       "datum": "bis 11:40",
